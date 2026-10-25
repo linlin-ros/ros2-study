@@ -38,3 +38,17 @@ file(GLOB/GLOB_RECURSE  变量名  要搜索的文件路径和文件类型）
 GLOB：将指定目录下搜索到的满总条件的所有文件生成一个列表，并将其存储到变量中
 GLOB_RECURSE:递归搜索指定目录，将搜索到的满总条件的文件名生成一个列表，并将其存储到变量中
 #CMAKE_CURRENT_SOURCE_DIR这个宏对应的路径就是CMakeLisit.txt这个文件的路径
+
+#包含头文件  在编译项目源文件时，狠很多时候都需要将源文件对应的头文件路径指定出来
+通过include_directories
+include_directories()        ()里就是头文件对应的路径了 
+${...} = 拿变量...里面存的数据
+
+tree树状打印目录
+
+#制作库文件
+静态库需要使用的命令
+add_library(库名字  STATIC [源文件] [源文件2]......)  //动态库就将static 改为shared
+在linux中 静态库名字分为三部分：lib+库名字+.a,此处只要指出库名字就好，另外两部分在生成该文件的时候会自动填充，动态库后面是.so
+动态库有执行权限，静态库没有
+library_output_path这个宏对静态和动态都适用
