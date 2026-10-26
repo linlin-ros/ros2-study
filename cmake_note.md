@@ -28,7 +28,7 @@ make -j4
 -------------------------
 #搜索文件
 方式1：
-#在cmak中使用aux_source_directory命令可以茶盅某个路径下所有文件 命令格式为：
+#在cmak中使用aux_source_directory命令可以查找某个路径下所有文件 命令格式为：
 aux_source_directory（<dir> <variable>)
 #dir:要搜索的目录       variable：将从dir目录搜索到的源文件列表储存到该变量中
 aux_source_directory（${PROJECT_SOURCE_DIR} src)
