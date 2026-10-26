@@ -1,3 +1,6 @@
+#CMAKE_CURRENT_SOURCE_DIR//当前CMakeLists.txt所在文件夹
+#CMAKE_CURRENT_BINARY_DIR//当前目录对应的build文件
+#PROJECT_SOURCE_DIR//项目根目录
 #最低cmake版本
 cmake_minimum_required(VERSION 3.12)
 #项目名
