@@ -82,3 +82,4 @@ INTERFACE：在interface后面引入的库不会被链接到前面的target中�
 target_link_libraries(app pthread)
 app:对应的是最终生成可执行程序的名字
 pthread：这是可执行程序要加载的动态库，这个库是系统提供的线程库，全名为里奔跑thread.so，在指定的时候一般会掐头（lib）去尾（.so)
+#target_link_libraries命令也可以链接静态库
