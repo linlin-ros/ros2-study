@@ -79,3 +79,6 @@ ros中还有一种特殊类型：Header，标头包含时间戳和ros2中常用�
 另外：
 参数通信的数据无需定义接口文件，参数通信时数据会被封装为参数对象，参数客户端和服务端操作的都是参数对象
 
+//共享文件
+直接：sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other,uid=1000,gid=1000    //挂载命令
+再：cp -r ~/ws01_plumbing/src /mnt/hgfs/ubuntu_share/   //ws01_pilumbing/src是可以换的是你想要共享的文件
