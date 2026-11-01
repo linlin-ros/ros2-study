@@ -1,3 +1,8 @@
+//小海龟
+ros2 run turtlesim turtlesim-node
+ros2 run turtlesim turtle_teleop_key
+//进入工作空间
+cd ~/ws01_plumbing
 创建：
 #新建功能包语法：
 ros2 pkg create 包名 --build-type 构建类型 --dependencies 依赖列表 --node-name 可执行程序名称
@@ -17,6 +22,9 @@ ros2 pkg exexutables [包名] #输出所有功能包或指定功能包下的可�
 ros2 pkg list #列出说有功能包
 ros2 pkg prefix 包名 #列出功能包路径
 ros2 pkg xml #列出功能包package.xml内容
+ros2 topic list -t //列出话题同时显示消息类型
+ros2 topic type /话题名 //打印话题收到的数据
+ros2 topic echo /话题名  //手动往话题发消息（测试用）开两个终端 一个终端执行这个命令  另一个终端发布消息
 ---------------------------------------------------------
 执行：
 ros2 run 功能包 可执行程序  参数
