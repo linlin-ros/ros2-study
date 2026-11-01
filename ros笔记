@@ -2,7 +2,7 @@
 #新建功能包语法：
 ros2 pkg create 包名 --build-type 构建类型 --dependencies 依赖列表 --node-name 可执行程序名称
 build-type：是指功能包构建类型，有cmake，ament_cmake ,ament_python三种类型可选；
-dependencies：所依赖的功能包列表；
+dependencies：所依赖的功能包列表； //一般要写rclcpp  C++的ROS2的核心库    //std_msgs 标准消息     自己写的自定义消息包
 node-name：可执行程序的名称，会自动生成对应的源文件并生成配置文件。
 -------------------------------------------------------------------------
 编译：
@@ -82,3 +82,28 @@ ros中还有一种特殊类型：Header，标头包含时间戳和ros2中常用�
 //共享文件
 直接：sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other,uid=1000,gid=1000    //挂载命令
 再：cp -r ~/ws01_plumbing/src /mnt/hgfs/ubuntu_share/   //ws01_pilumbing/src是可以换的是你想要共享的文件
+
+//话题通信自定义接口消息：
+1.创建并编译。msg文件
+功能包base_interfaces_demo下新建msg文件，msg文件下新建***.msg文件 ***首字母要大写
+2.编辑配置文件
+        1.package.xml：
+        在package.xml文件中需要添加一些依赖包：
+        <build_depend>rosidl_default_generators<build_depend>
+        <exec_depend>rosidl_default_runtime</exec_depend>
+        <member_of_geroup>rosidl_interface_packages</member_of_group>
+        2.CMakeLists.txt文件：
+        为了将.msg文件转换成对应的C++代码，还需要在CMakeLists.txt中添加如下配置
+        find_package(rosidl_default_generators REQUIRED)
+        
+        rosidl_generate_interfaces(${PROJECT_NAME}
+           "msg/Student.msg"//这是可以更换的
+        )
+------
+3.编译：
+终端进入当前工作空间，编译功能包
+colcon build --package-select base_interfaces_demo
+
+4.测试：
+. install/setup.bash
+ros2 interface show base_interfaces_demo/msg/Student   //会显示接口里的内容
