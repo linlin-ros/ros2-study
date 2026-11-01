@@ -11,9 +11,9 @@
 
       //包含头文件
 #include "rclcpp/rclcpp.hpp"
-#include "std_msgs/msg/string.hpp"
+#include "std_msgs/msg/string.hpp"         
 
-using namespace std::chrono_literals;
+using namespace std::chrono_literals;//开启时间字面量后缀，可以直接写500ms
 
 //3.定义节点类；
 class MinimalPublisher:public rclcpp::Node
@@ -46,7 +46,7 @@ private:
     auto message = std_msgs::msg::String();
     message.data = "Hello,world!" + std::to_string(count_++);
     RCLCPP_INFO(this->get_logger(),"发布的消息：'%s'",message.data.c_str());
-    publisher_->publish(message);
+    publisher_->publish(message);//把messages这条消息发布到话题上
   }
   rclcpp::TimerBase::SharedPtr timer_;
   rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;
