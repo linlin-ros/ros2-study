@@ -1,6 +1,11 @@
 //小海龟
 ros2 run turtlesim turtlesim-node
 ros2 run turtlesim turtle_teleop_key
+//创建工作空间：
+mkdir -p ~/ws_demo/src
+//进入src，在src里面创建功能包
+cd ~/ws_demo/src
+ros2 pkg create.....
 //进入工作空间
 cd ~/ws01_plumbing
 创建：
