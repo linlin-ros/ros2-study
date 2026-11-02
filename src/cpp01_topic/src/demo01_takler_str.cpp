@@ -16,11 +16,11 @@
 using namespace std::chrono_literals;//开启时间字面量后缀，可以直接写500ms
 
 //3.定义节点类；
-class MinimalPublisher:public rclcpp::Node
+class MyNode:public rclcpp::Node
 {
 public:
-  MinimalPublisher()
-  : Node("minimal_publisher"),count_(0)
+  MyNode()
+  : Node("mynode_node_cpp"),count_(0)
   {
     //3-1.创建发布方；
     /*
@@ -37,7 +37,7 @@ public:
         1.时间间隔；
         2.回调函数；
         返回值：定时器对象指针。*/
-    timer_ = this->create_wall_timer(500ms,std::bind(&MinimalPublisher::timer_callback,this));
+    timer_ = this->create_wall_timer(500ms,std::bind(&MyNode::timer_callback,this));
   }
 private:
   void timer_callback()
@@ -57,7 +57,7 @@ int main(int argc,char * argv[])
   //2.初始化ros2客户端；
   rclcpp::init(argc,argv);
   //4.调用spin函数，并传入节点对象指针。
-  rclcpp::spin(std::make_shared<MinimalPublisher>());
+  rclcpp::spin(std::make_shared<MyNode>());
   //5.释放资源；
   rclcpp::shutdown();
   return 0;
