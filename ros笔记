@@ -114,6 +114,7 @@ ros中还有一种特殊类型：Header，标头包含时间戳和ros2中常用�
         rosidl_generate_interfaces(${PROJECT_NAME}
            "msg/Student.msg"//这是可以更换的
         )
+//如果头文件报错需要加入："${workspaceFolder}/install/**"
 ------
 3.编译：
 终端进入当前工作空间，编译功能包
