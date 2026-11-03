@@ -31,6 +31,7 @@ ros2 pkg prefix 包名 #列出功能包路径
 ros2 pkg xml #列出功能包package.xml内容
 ros2 topic list -t //列出话题同时显示消息类型
 ros2 topic type /话题名 //打印话题收到的数据
+ros2 topic info /话题名 //查看消息类型，核对发布订阅类型一致
 ros2 topic echo /话题名  //手动往话题发消息（测试用）开两个终端 一个终端执行这个命令  另一个终端发布消息
 ---------------------------------------------------------
 执行：
@@ -124,3 +125,6 @@ colcon build --package-select base_interfaces_demo
 4.测试：
 . install/setup.bash
 ros2 interface show base_interfaces_demo/msg/Student   //会显示接口里的内容
+
+//头文件
+分割字符串必备：#include <sstream>
