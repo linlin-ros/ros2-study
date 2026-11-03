@@ -99,8 +99,9 @@ ros中还有一种特殊类型：Header，标头包含时间戳和ros2中常用�
 再：cp -r ~/ws01_plumbing/src /mnt/hgfs/ubuntu_share/   //ws01_pilumbing/src是可以换的是你想要共享的文件
 
 //话题通信自定义接口消息：
+//创建功能包：ros2 pkg create --build-type ament_cmake base_interfaces_demo
 1.创建并编译。msg文件
-功能包base_interfaces_demo下新建msg文件，msg文件下新建***.msg文件 ***首字母要大写
+功能包base_interfaces_demo下新建msg文件夹，msg文件下新建***.msg文件 ***首字母要大写 ***就是自定义的数据类型
 2.编辑配置文件
         1.package.xml：
         在package.xml文件中需要添加一些依赖包：
