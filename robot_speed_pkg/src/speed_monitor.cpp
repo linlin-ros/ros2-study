@@ -48,7 +48,7 @@ private:
         if (first_process_) {
             previous_speed_ = 0;
             first_process_ = false;
-        }
+        }z
         
         // 计算绝对差值
         int delta_v = absoluteDifference(current_speed, previous_speed_);
