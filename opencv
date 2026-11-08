@@ -1,3 +1,8 @@
 知识点：
 读取图像：imread
 显示图像：imshow
+
+创建功能包：
+ros2 pkg create --build-type ament_cmake --license Apache-2.0 opencv_vision --dependencies rclcpp cv_bridge sensor_msgs 
+--license Apache-2.0:开源协议
+opencv_vision:功能包名字
