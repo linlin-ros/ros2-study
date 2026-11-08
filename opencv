@@ -6,3 +6,6 @@
 ros2 pkg create --build-type ament_cmake --license Apache-2.0 opencv_vision --dependencies rclcpp cv_bridge sensor_msgs 
 --license Apache-2.0:开源协议
 opencv_vision:功能包名字
+
+假设你的图片很大时这屏幕不能完全显示出
+此时可以用到namedWindow（"输入窗口"，WINDOW_FREERATIO）；
