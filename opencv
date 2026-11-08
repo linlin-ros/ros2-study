@@ -9,3 +9,8 @@ opencv_vision:功能包名字
 
 假设你的图片很大时这屏幕不能完全显示出
 此时可以用到namedWindow（"输入窗口"，WINDOW_FREERATIO）；
+
+g++命令：
+g++ 源文件.cpp -o demo $(pkg-config --cflags --libs opencv4
+./demo
+//这个demo是可以随便取的
